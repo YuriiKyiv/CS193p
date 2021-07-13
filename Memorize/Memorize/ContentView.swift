@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["⚽️","🏀","🏈","⚾️","🥎","🎾","🏐","🏉","🥏","🎱","🪀","🏓","🏸","🏒","🏑","🥍","🏏","🪃","🥅","⛳️","🪁","🏹","🎣","🤿","🥊","🥋","🎽"];
+    let sports = ["⚽️","🏀","🏈","⚾️","🥎","🎾","🏐","🏉","🥏","🎱","🪀","🏓","🏸","🏒","🏑","🥍","🏏","🪃","🥅","⛳️","🪁","🏹","🎣","🤿","🥊","🥋","🎽"];
+    let animals = ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🐯","🦁","🐮","🐷","🐽","🐸","🐵","🙈","🙉","🙊","🐒","🐔","🐧","🐦","🐤","🐣","🐥"]
+    let food = ["🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🍓","🫐","🍈","🍒","🍑","🥭","🍍","🥥","🥝","🍅","🥦","🥬","🥒","🌶","🫑","🌽","🥕","🫒","🧅","🥐"]
+    
+    @State var emojis = ["⚽️","🏀","🏈","⚾️","🥎"]
     @State var emojiCount = 4
     
     var top: some View {
@@ -27,37 +31,45 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
+            Spacer()
+            footer
         }
         .padding(.horizontal)
     }
     
     var footer: some View {
         HStack {
-            add
+            sportsView
             Spacer()
-            remove
+            animalsView
+            Spacer()
+            foodView
         }
         .font(.largeTitle)
         .padding()
     }
     
-    var add: some View {
+    var sportsView: some View {
         Button {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
+            emojis = sports
         } label: {
-            Image(systemName: "plus.circle")
+            Image(systemName: "sportscourt")
         }
     }
     
-    var remove: some View {
+    var animalsView: some View {
         Button {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
+            emojis = animals
         } label: {
-            Image(systemName: "minus.circle")
+            Image(systemName: "tortoise")
+        }
+    }
+    
+    var foodView: some View {
+        Button {
+            emojis = food
+        } label: {
+            Image(systemName: "mouth")
         }
     }
 }
