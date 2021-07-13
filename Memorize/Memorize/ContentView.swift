@@ -10,8 +10,15 @@ import SwiftUI
 struct ContentView: View {
     var emojis = ["⚽️","🏀","🏈","⚾️","🥎","🎾","🏐","🏉","🥏","🎱","🪀","🏓","🏸","🏒","🏑","🥍","🏏","🪃","🥅","⛳️","🪁","🏹","🎣","🤿","🥊","🥋","🎽"];
     @State var emojiCount = 4
+    
+    var top: some View {
+        Text("Memorize").font(.largeTitle)
+    }
+    
     var body: some View {
         VStack {
+            top
+            Spacer()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 64))]) {
                     ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
