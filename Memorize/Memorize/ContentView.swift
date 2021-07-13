@@ -50,26 +50,35 @@ struct ContentView: View {
     }
     
     var sportsView: some View {
-        Button {
-            emojis = sports.shuffled()
-        } label: {
-            Image(systemName: "sportscourt")
+        VStack {
+            Button {
+                emojis = sports.shuffled()
+            } label: {
+                Image(systemName: "sportscourt")
+            }
+            Text("Sport").font(.title3).foregroundColor(.blue)
         }
     }
     
     var animalsView: some View {
-        Button {
-            emojis = animals.shuffled()
-        } label: {
-            Image(systemName: "tortoise")
+        VStack {
+            Button {
+                emojis = animals.shuffled()
+            } label: {
+                Image(systemName: "tortoise")
+            }
+            Text("Animals").font(.title3).foregroundColor(.blue)
         }
     }
     
     var foodView: some View {
-        Button {
-            emojis = food.shuffled()
-        } label: {
-            Image(systemName: "mouth")
+        VStack {
+            Button {
+                emojis = food.shuffled()
+            } label: {
+                Image(systemName: "mouth")
+            }
+            Text("Food").font(.title3).foregroundColor(.blue)
         }
     }
 }
