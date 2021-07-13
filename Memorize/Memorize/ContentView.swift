@@ -20,8 +20,6 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
-            Spacer()
-            footer
         }
         .padding(.horizontal)
     }
